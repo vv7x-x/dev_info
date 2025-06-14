@@ -1,0 +1,65 @@
+/*
+  neurons.css: مؤثرات عصبية ثلاثية الأبعاد، نبض، ألوان متغيرة
+*/
+:root {
+  --neon-cyan: #00fff7;
+  --neon-pink: #ff00ea;
+  --neon-yellow: #fff200;
+  --neon-green: #00ff6a;
+  --bg-dark: #0a0e1a;
+  --bg-glow: #1a1f2b;
+  --text-main: #fff;
+  --pulse: 0 0 32px 8px var(--neon-cyan), 0 0 64px 16px var(--neon-pink);
+  --font-main: 'Orbitron', 'Poppins', Arial, sans-serif;
+}
+body {
+  background: linear-gradient(135deg, var(--bg-dark) 70%, var(--bg-glow) 100%);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  margin: 0;
+  overflow-x: hidden;
+}
+.neon, .glow {
+  font-family: var(--font-main);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 16px var(--neon-cyan), 0 0 32px var(--neon-pink);
+}
+.glow {
+  color: var(--neon-pink);
+  text-shadow: 0 0 24px var(--neon-pink), 0 0 48px var(--neon-cyan);
+}
+.pulse {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  margin: 0 8px;
+  display: inline-block;
+  animation: pulseAnim 1.2s infinite alternate;
+}
+.pulse:nth-child(2) { animation-delay: 0.3s; }
+.pulse:nth-child(3) { animation-delay: 0.6s; }
+@keyframes pulseAnim {
+  0% { box-shadow: 0 0 0 0 var(--neon-cyan); opacity: 1; }
+  100% { box-shadow: 0 0 32px 8px var(--neon-pink); opacity: 0.6; }
+}
+.neural-logo {
+  text-align: center;
+  margin-top: 8vh;
+  margin-bottom: 2vh;
+}
+.neural-startup-bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 60% 40%, #1a1f2b 60%, #0a0e1a 100%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.startup-loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}

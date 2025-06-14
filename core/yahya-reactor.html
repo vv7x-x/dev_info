@@ -1,0 +1,44 @@
+<!--
+  Web Component: codeforge-reactor
+  بيئة تفاعلية لصناعة الأكواد وتصديرها مباشرة
+-->
+<template id="codeforge-reactor-tpl">
+  <div class="reactor-bg">
+    <div class="reactor-header">
+      <span class="neon">CodeForge</span> <span class="glow">Reactor</span>
+    </div>
+    <textarea class="code-input" placeholder="اكتب أو عدل الكود هنا..."></textarea>
+    <button class="run-btn">تشغيل</button>
+    <pre class="code-output"></pre>
+    <button class="export-btn">تصدير الكود</button>
+  </div>
+</template>
+<script type="module">
+  class CodeForgeReactor extends HTMLElement {
+    constructor() {
+      super();
+      const tpl = document.getElementById('codeforge-reactor-tpl').content.cloneNode(true);
+      this.attachShadow({mode:'open'}).appendChild(tpl);
+    }
+    connectedCallback() {
+      const runBtn = this.shadowRoot.querySelector('.run-btn');
+      const codeInput = this.shadowRoot.querySelector('.code-input');
+      const codeOutput = this.shadowRoot.querySelector('.code-output');
+      runBtn.onclick = () => {
+        try {
+          codeOutput.textContent = eval(codeInput.value);
+        } catch(e) {
+          codeOutput.textContent = e.message;
+        }
+      };
+      this.shadowRoot.querySelector('.export-btn').onclick = () => {
+        const blob = new Blob([codeInput.value], {type:'text/plain'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'yahya_code.js';
+        a.click();
+      };
+    }
+  }
+  customElements.define('codeforge-reactor', CodeForgeReactor);
+</script>

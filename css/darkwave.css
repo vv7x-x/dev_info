@@ -1,0 +1,72 @@
+/*
+  darkwave.css: مؤثرات موجية داكنة، تحولات عصبية، خلفيات متغيرة
+*/
+body {
+  transition: background 1.2s cubic-bezier(.77,0,.18,1), color 0.7s;
+}
+.reactor-bg {
+  background: linear-gradient(120deg, #191c29 60%, #23263a 100%);
+  border-radius: 24px;
+  box-shadow: 0 0 32px 8px #00fff7cc, 0 0 64px 16px #ff00eacc;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+.reactor-header {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #fff200;
+  text-shadow: 0 0 16px #ff00ea, 0 0 32px #00fff7;
+}
+.code-input {
+  width: 100%;
+  min-height: 120px;
+  background: #181a25;
+  color: #fff;
+  border: 2px solid #00fff7;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 12px 2px #00fff7;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+.code-input:focus {
+  border: 2px solid #ff00ea;
+  box-shadow: 0 0 16px 4px #ff00ea;
+  outline: none;
+}
+.run-btn, .export-btn {
+  background: #00fff7;
+  color: #191c29;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: bold;
+  padding: 0.7rem 2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  box-shadow: 0 0 16px 2px #00fff7;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.run-btn:hover, .export-btn:hover {
+  background: #ff00ea;
+  color: #fff;
+  box-shadow: 0 0 24px 4px #ff00ea;
+}
+.code-output {
+  background: #23263a;
+  color: #fff200;
+  border-radius: 12px;
+  min-height: 60px;
+  padding: 1rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  margin-top: 1rem;
+  box-shadow: 0 0 12px 2px #fff200;
+  white-space: pre-wrap;
+}

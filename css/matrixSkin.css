@@ -1,0 +1,17 @@
+/*
+  matrixSkin.css: شبكة عصبونات، مؤثرات Matrix، خطوط متحركة
+*/
+webmatrix-field {
+  display: block;
+  width: 100vw;
+  height: 40vh;
+  position: relative;
+  z-index: 1;
+}
+.matrix-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(180deg, #0a0e1a 80%, #00fff7 100%);
+  filter: blur(0.5px) brightness(1.1);
+}

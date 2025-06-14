@@ -1,0 +1,53 @@
+<!--
+  Web Component: yahya-neural-startup
+  شاشة بدء تشغيل عصبية متحركة مع مؤثرات صوتية وضوئية
+-->
+<template id="neural-startup-tpl">
+  <div class="neural-startup-bg">
+    <canvas id="startup-canvas"></canvas>
+    <div class="neural-logo">
+      <span class="neon">Yahya</span><span class="glow">NeuronCore</span>
+    </div>
+    <div class="startup-loader">
+      <div class="pulse"></div>
+      <div class="pulse"></div>
+      <div class="pulse"></div>
+    </div>
+    <audio id="startup-audio" src="../audio/neural-beat.ogg" preload="auto"></audio>
+  </div>
+</template>
+<script type="module">
+  class YahyaNeuralStartup extends HTMLElement {
+    constructor() {
+      super();
+      const tpl = document.getElementById('neural-startup-tpl').content.cloneNode(true);
+      this.attachShadow({mode:'open'}).appendChild(tpl);
+    }
+    connectedCallback() {
+      // تشغيل صوت البدء
+      this.shadowRoot.getElementById('startup-audio').play();
+      // رسم مؤثرات Canvas
+      const canvas = this.shadowRoot.getElementById('startup-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      let t = 0;
+      function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(let i=0;i<20;i++){
+          ctx.beginPath();
+          ctx.arc(canvas.width/2,canvas.height/2,80+Math.sin(t/10+i)*40,0,2*Math.PI);
+          ctx.strokeStyle = `rgba(${100+i*7},${255-i*10},${255-i*12},0.15)`;
+          ctx.lineWidth = 2+Math.sin(t/20+i)*2;
+          ctx.shadowBlur = 20;
+          ctx.shadowColor = '#00fff7';
+          ctx.stroke();
+        }
+        t++;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+  }
+  customElements.define('yahya-neural-startup', YahyaNeuralStartup);
+</script>
