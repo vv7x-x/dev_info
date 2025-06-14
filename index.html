@@ -1,0 +1,173 @@
+<!--
+  موقع ويب عصري بتأثيرات نيون وداكنة، منظم بالكامل.
+  تم التعليق على كل جزء لسهولة التعديل.
+-->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مطور عصري - Portfolio</title>
+  <!-- خطوط Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- ملف CSS الرئيسي -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- شريط التنقل العلوي الثابت -->
+  <nav id="navbar" class="navbar">
+    <div class="container nav-content">
+      <div class="logo neon-text">Dev<span>Info</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">عني</a></li>
+        <li><a href="#skills">المهارات</a></li>
+        <li><a href="#projects">المشاريع</a></li>
+        <li><a href="#contact">التواصل</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="تبديل الوضع الليلي/النهاري">
+        <span class="icon-moon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- الصفحة الرئيسية -->
+  <header id="home" class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="neon-text">مرحباً بك في عالمي البرمجي!</h1>
+        <p>أنا مطور ويب أعشق بناء تجارب رقمية عصرية ومجنونة. استكشف مهاراتي ومشاريعي أدناه!</p>
+        <button id="scroll-down" class="cta-btn">اعرف المزيد</button>
+      </div>
+      <!-- رسم SVG متحرك عصري -->
+      <div class="hero-anim">
+        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="spin-anim">
+          <circle cx="110" cy="110" r="100" stroke="#00fff7" stroke-width="4" opacity="0.5"/>
+          <circle cx="110" cy="110" r="80" stroke="#ff00ea" stroke-width="4" opacity="0.5"/>
+          <circle cx="110" cy="110" r="60" stroke="#fff200" stroke-width="4" opacity="0.5"/>
+          <circle cx="110" cy="110" r="40" stroke="#00ff6a" stroke-width="4" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- قسم من أنا -->
+  <section id="about" class="about-section section">
+    <div class="container about-content">
+      <div class="about-img">
+        <!-- صورة شخصية أو أيقونة -->
+        <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="صورة المطور" class="profile-pic">
+      </div>
+      <div class="about-text">
+        <h2 class="neon-text">من أنا؟</h2>
+        <p>مطور ويب شغوف بابتكار حلول رقمية عصرية، أستخدم أحدث التقنيات لصناعة مواقع وتطبيقات تواكب المستقبل.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم المهارات -->
+  <section id="skills" class="skills-section section">
+    <div class="container">
+      <h2 class="neon-text">المهارات</h2>
+      <div class="skills-grid">
+        <!-- أيقونات المهارات مع تأثير hover -->
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-js"></i>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-react"></i>
+          <span>React</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-node-js"></i>
+          <span>Node.js</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-git-alt"></i>
+          <span>Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم المشاريع -->
+  <section id="projects" class="projects-section section">
+    <div class="container">
+      <h2 class="neon-text">المشاريع</h2>
+      <div class="projects-grid">
+        <!-- بطاقة مشروع -->
+        <div class="project-card">
+          <img src="https://placehold.co/300x180/191c29/fff?text=Project+1" alt="مشروع 1">
+          <div class="project-info">
+            <h3>مشروع واجهات عصرية</h3>
+            <p>تطوير واجهات مستخدم تفاعلية بتقنيات حديثة وتأثيرات بصرية جذابة.</p>
+            <a href="#" class="project-btn" target="_blank">عرض المشروع</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://placehold.co/300x180/191c29/fff?text=Project+2" alt="مشروع 2">
+          <div class="project-info">
+            <h3>تطبيق إدارة مهام</h3>
+            <p>تطبيق ويب لإدارة وتنظيم المهام اليومية بواجهة سهلة الاستخدام.</p>
+            <a href="#" class="project-btn" target="_blank">عرض المشروع</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://placehold.co/300x180/191c29/fff?text=Project+3" alt="مشروع 3">
+          <div class="project-info">
+            <h3>موقع شخصي تفاعلي</h3>
+            <p>موقع شخصي بتصميم داكن وتأثيرات نيون متحركة يعكس هوية المطور.</p>
+            <a href="#" class="project-btn" target="_blank">عرض المشروع</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم التواصل -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <h2 class="neon-text">التواصل</h2>
+      <form id="contact-form" class="contact-form" autocomplete="off">
+        <input type="text" id="name" name="name" placeholder="الاسم" required>
+        <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea id="message" name="message" placeholder="رسالتك" required></textarea>
+        <button type="submit" class="cta-btn">إرسال</button>
+        <div id="form-msg" class="form-msg"></div>
+      </form>
+      <div class="contact-links">
+        <a href="https://wa.me/" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:example@gmail.com" target="_blank" title="Gmail"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- تذييل الموقع -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <span>© 2025 جميع الحقوق محفوظة - مطور عصري</span>
+      <button id="back-to-top" class="back-to-top" title="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+      <div class="footer-social">
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- أيقونات FontAwesome -->
+  <script src="https://kit.fontawesome.com/2b8e2e6e2a.js" crossorigin="anonymous"></script>
+  <!-- ملف جافاسكريبت الرئيسي -->
+  <script src="main.js"></script>
+</body>
+</html>
